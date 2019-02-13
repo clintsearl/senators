@@ -78,6 +78,7 @@ class Home extends Component {
             
           </div>
           </label>
+          
         </div>
       </div>
     );

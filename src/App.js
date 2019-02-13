@@ -14,6 +14,7 @@ class App extends Component {
         <Home/>
 
         <br/>
+        <button type="button" id="search">Search</button>
       </div>
     );
   }
