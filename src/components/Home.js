@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-
+//statefull component
+//event bubbling formsubmited call series of events
 
 class Home extends Component {
   state = {
@@ -22,6 +23,9 @@ class Home extends Component {
   async componentWillMount(){
     await this.getSenator()
   }
+  
+  document.getElementById('search')
+  searchHandler(s.value)
 
 
   render(){
@@ -32,7 +36,7 @@ class Home extends Component {
       <div className="Home">
         <p>This is the form here</p>  
         <div className="form-group">         
-            <label htmlFor="search">Search</label>
+            <label htmlFor="search" id="search">Search</label>
             <input type="text" className="form-control" id="search" placeholder="Search Senator's Name"/>
             <label htmlFor="party">Party</label>
             <select className="form-control" id="party" name="party">
