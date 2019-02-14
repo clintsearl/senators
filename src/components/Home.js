@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import Container from './components/Container';
 
 //statefull component
 //event bubbling formsubmited call series of events
@@ -11,23 +12,6 @@ class Home extends Component {
     state: ''
   }
 
-  getSenator= async => {
-    fetch('https://raw.githubusercontent.com/CivilServiceUSA/us-senate/master/us-senate/data/us-senate.json')
-    .then(senData => {
-    return senData.json();
-    })
-    .then(data => {
-    this.setState ({ senator: data})
-    })  
-  }
-  async componentWillMount(){
-    await this.getSenator()
-  }
-  
-  document.getElementById('search')
-  searchHandler(s.value)
-
-
   render(){
   console.log(this.state)
   
@@ -35,15 +19,17 @@ class Home extends Component {
       
       <div className="Home">
         <p>This is the form here</p>  
-        <div className="form-group">         
-            <label htmlFor="search" id="search">Search</label>
+        <div className="form-group"> 
+        <label htmlFor="query">Query</label>
+          <input type="search" id="query" name="query" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search"  />        
+            <label htmlFor="search" id="search" name ="search" value={search} onChange={e =>set}>Search</label>
             <input type="text" className="form-control" id="search" placeholder="Search Senator's Name"/>
             <label htmlFor="party">Party</label>
             <select className="form-control" id="party" name="party">
               <option>Choose</option>
-              <option>Republican</option>
-              <option>Democrat</option>
-              <option>Indepentant</option>
+              <option value= "republican">Republican</option>
+              <option value= "democrat">Democrat</option>
+              <option value= "indepentent">Indepentent</option>
             </select>
         	<label htmlFor="state" className="col-sm-2 control-label">State
           <div className="col-sm-10">

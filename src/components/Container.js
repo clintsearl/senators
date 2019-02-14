@@ -1,13 +1,13 @@
 // container handles the flow of the data. general idea not required
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './Home.css';
 
 //store the info from form so it doesn't forget it all. 
 
-class Home extends Component {
+class Container extends Component {
   state = {
     senator: [],
-    party: '',
+    filterInput: {},
     state: ''
   }
 
@@ -29,7 +29,7 @@ class Home extends Component {
 
 
   render(){
-  console.log(this.state)
+    const {seators, filterInput}
   
     return (
       
@@ -39,4 +39,4 @@ class Home extends Component {
     );
   };
   }
-export default Home;
+export default Container;
