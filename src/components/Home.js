@@ -4,23 +4,46 @@ import './Home.css';
 
 
 class Home extends Component {
-  render() {
+  state = {
+    senator: [],
+    party: '',
+    state: ''
+  }
+
+  getSenator= async => {
+    fetch('https://raw.githubusercontent.com/CivilServiceUSA/us-senate/master/us-senate/data/us-senate.json')
+    .then(senData => {
+    return senData.json();
+    })
+    .then(data => {
+    this.setState ({ senator: data})
+    })  
+  }
+  async componentWillMount(){
+    await this.getSenator()
+  }
+
+
+  render(){
+  console.log(this.state)
+  
     return (
+      
       <div className="Home">
         <p>This is the form here</p>  
         <div className="form-group">         
             <label htmlFor="search">Search</label>
-            <input type="text" class="form-control" id="search" placeholder="Search Senator's Name"/>
+            <input type="text" className="form-control" id="search" placeholder="Search Senator's Name"/>
             <label htmlFor="party">Party</label>
-            <select class="form-control" id="party" name="party">
+            <select className="form-control" id="party" name="party">
               <option>Choose</option>
               <option>Republican</option>
               <option>Democrat</option>
               <option>Indepentant</option>
             </select>
-        	<label htmlfor="state" class="col-sm-2 control-label">State
-          <div class="col-sm-10">
-            <select class="form-control" id="state" name="state">
+        	<label htmlFor="state" className="col-sm-2 control-label">State
+          <div className="col-sm-10">
+            <select className="form-control" id="state" name="state">
               <option value="">N/A</option>
               <option value="AK">Alaska</option>
               <option value="AL">Alabama</option>
@@ -78,11 +101,11 @@ class Home extends Component {
             
           </div>
           </label>
-          
+          <br/>
+          <button type="button" id="search">Search</button>
         </div>
       </div>
     );
+  };
   }
-}
-
 export default Home;
