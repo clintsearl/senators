@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Container from './components/Container';
+// import Container from './components/Container';
 
 //statefull component
 //event bubbling formsubmited call series of events
 
 class Home extends Component {
+  
   state = {
-    senator: [],
-    party: '',
-    state: ''
+   search: ""
+
   }
+  query = []
 
   render(){
   console.log(this.state)
   
     return (
       
-      <div className="Home">
+      <div>
         <p>This is the form here</p>  
-        <div className="form-group"> 
-        <label htmlFor="query">Query</label>
-          <input type="search" id="query" name="query" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search"  />        
-            <label htmlFor="search" id="search" name ="search" value={search} onChange={e =>set}>Search</label>
-            <input type="text" className="form-control" id="search" placeholder="Search Senator's Name"/>
-            <label htmlFor="party">Party</label>
+        <div className="form-group">
+          <form>
+          <label htmlFor="query">Query</label>
+                  {/* <input type="search" id="query" name="query" value={query} onChange={e => (e.target.value)} placeholder="Search"  />        
+                    <label htmlFor="search" >Search</label> */}
+            {/* <input type="search" id="query" name ="query" value={query} onChange={e =>setQuery} placeholder="Search Senator's Name"/>
+            <label htmlFor="party">Party</label>*/}
             <select className="form-control" id="party" name="party">
               <option>Choose</option>
               <option value= "republican">Republican</option>
@@ -93,9 +95,11 @@ class Home extends Component {
           </label>
           <br/>
           <button type="button" id="search">Search</button>
+          </form>
+
         </div>
       </div>
-    );
-  };
+    
+      );  }
   }
 export default Home;

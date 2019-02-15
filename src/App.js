@@ -14,7 +14,8 @@ class App extends Component {
         </header>
         <p>Use the form to find information about the United States senators.</p>
         <Home/>
-
+        <br/>
+        <Container/>
         <br/>
         
       </div>

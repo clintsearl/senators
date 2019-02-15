@@ -6,37 +6,33 @@ import './Home.css';
 
 class Container extends Component {
   state = {
-    senator: [],
-    filterInput: {},
-    state: ''
-  }
+    senator: [],  
+  };
+    componentDidMount () {
+      fetch('https://raw.githubusercontent.com/CivilServiceUSA/us-senate/master/us-senate/data/us-senate.json')
+      .then(senData => {
+      return senData.json();
+      })
+      .then(data => {
+        console.log("data:", data)
+        this.setState({senators: data})
+      });
+    }
+  // document.getElementById('search')
+  // searchHandler(s.value)
+    
 
-  getSenator= async => {
-    fetch('https://raw.githubusercontent.com/CivilServiceUSA/us-senate/master/us-senate/data/us-senate.json')
-    .then(senData => {
-    return senData.json();
-    })
-    .then(data => {
-    this.setState ({ senator: data})
-    })  
-  }
-  async componentWillMount(){
-    await this.getSenator()
-  }
   
-  document.getElementById('search')
-  searchHandler(s.value)
-
-
-  render(){
-    const {seators, filterInput}
-  
+  render()
+  {
+    // const {seators, filterInput}
     return (
       
-      <div className="Home">
-        <p>This is the form here</p> 
+      <div className="Container">
+        <p>container</p> 
       </div>
     );
-  };
-  }
+  
+  }}
+
 export default Container;
