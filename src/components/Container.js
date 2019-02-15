@@ -1,5 +1,5 @@
 // container handles the flow of the data. general idea not required
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './Home.css';
 
 //store the info from form so it doesn't forget it all. 
