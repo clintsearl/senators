@@ -35,15 +35,20 @@ class Container extends Component {
       <div className="Container">
 
         {this.state.senators.map((senator, index) => 
-        (<div key={index}> <h3>{senator.name}</h3>
+        (<div className="senatorInfo" key={index}> <h3>{senator.name}</h3>
         <p>{senator.party}</p>
-        <p>{senator.gender}</p>
         <p>{senator.state_name}</p>
-        <p></p>
+        <ul>
+          <li>{senator.entered_office}</li>
+          <li>{senator.term_end}</li>
+          <li>{senator.gender}</li>
+          <li>{senator.ethnicity}</li>
+          <li>{senator.religion}</li>
+        </ul>
+        <p>{senator.biography}</p>
 
         </div>)
         )}
-        <p>container</p> 
       </div>
     );
   

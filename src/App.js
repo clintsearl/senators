@@ -5,6 +5,7 @@ import './App.css';
 // import Container from './components/Container';
 
 import Routing from "./Routing"
+import Container from './components/Container';
 
 
 
@@ -16,6 +17,7 @@ class App extends Component {
           <h1>Senator's Information</h1>
         </header> */}
         <Routing/>
+        <Container/>
         
         {/* <p>Use the form to find information about the United States senators.</p> */}
                 

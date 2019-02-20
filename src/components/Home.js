@@ -29,7 +29,7 @@ class Home extends Component {
             {/* <input type="search" id="query" name ="query" value={query} onChange={e =>setQuery} placeholder="Search Senator's Name"/>
             <label htmlFor="party">Party</label>*/}
             <select className="form-control" id="party" name="party">
-              <option>Choose</option>
+              <option onChange={(e) => this.setState.party.value}>Choose</option>
               <option value= "republican">Republican</option>
               <option value= "democrat">Democrat</option>
               <option value= "indepentent">Indepentent</option>
@@ -91,7 +91,7 @@ class Home extends Component {
               <option value="WV">West Virginia</option>
               <option value="WY">Wyoming</option>
             </select>
-            
+           
           </div>
           </label>
           <br/>
