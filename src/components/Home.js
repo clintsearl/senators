@@ -8,14 +8,16 @@ import './Home.css';
 
 class Home extends Component {
   
-  state = {
-   search: ""
-
+ state = {
+   search: "",
+    party: ""
   }
   query = []
 
   render(){
-  console.log(this.state)
+  // console.log(Home.state.search)
+  
+  console.log(this)
   
     return (
       
@@ -24,12 +26,12 @@ class Home extends Component {
         <div className="form-group">
           <form>
           <label htmlFor="query">Query</label>
-                  {/* <input type="search" id="query" name="query" value={query} onChange={e => (e.target.value)} placeholder="Search"  />        
-                    <label htmlFor="search" >Search</label> */}
+             <input type="search" id="query" name="query" onChange={e => this.setState({search: e.target.value})} placeholder="Search"  />        
+                    {/* <label htmlFor="search" >Search</label> */}
             {/* <input type="search" id="query" name ="query" value={query} onChange={e =>setQuery} placeholder="Search Senator's Name"/>
             <label htmlFor="party">Party</label>*/}
-            <select className="form-control" id="party" name="party">
-              <option onChange={(e) => this.setState.party.value}>Choose</option>
+            <select className="form-control" id="party" name="party" onChange = {e => this.setState({party: e.target.value})}>
+              <option value= "">Choose</option>
               <option value= "republican">Republican</option>
               <option value= "democrat">Democrat</option>
               <option value= "indepentent">Indepentent</option>
@@ -97,8 +99,8 @@ class Home extends Component {
           <br/>
           <button type="button" id="search">Search</button>
           </form>
-
         </div>
+
       </div>
     
       );  }

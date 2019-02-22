@@ -6,7 +6,8 @@ import './Home.css';
 
 class Container extends Component {
   state = {
-    senators: [],  
+    senators: [], 
+    party:"" 
   };
 
   //Or call this a function and then put "componentWillMount after and call the function."
@@ -25,6 +26,14 @@ class Container extends Component {
   // document.getElementById('search')
   // searchHandler(s.value)
     
+  //Filter by party
+  filterByParty= (e) =>{
+    let updatedList = this.state.party
+    updatedList = updatedList.filter(party =>{
+      return 
+    })
+
+  }
 
   
   render()
