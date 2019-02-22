@@ -44,18 +44,20 @@ class Container extends Component {
       <div className="Container">
 
         {this.state.senators.map((senator, index) => 
-        (<div className="senatorInfo" key={index}> <h3>{senator.name}</h3>
+        (<div className="senatorInfo" key={index}> 
+        <h3>{senator.name}</h3>
         <p>{senator.party}</p>
         <p>{senator.state_name}</p>
         <ul>
-          <li>{senator.entered_office}</li>
-          <li>{senator.term_end}</li>
-          <li>{senator.gender}</li>
-          <li>{senator.ethnicity}</li>
-          <li>{senator.religion}</li>
+          <li>Entered Office: {senator.entered_office}</li>
+          <li>Term Ends: {senator.term_end}</li>
+          <li>Gender: {senator.gender}</li>
+          <li>Ethnicity: {senator.ethnicity}</li>
+          <li>Religion: {senator.religion}</li>
         </ul>
+        <p>Date of Birth:{senator.date_of_birth}</p>
         <p>{senator.biography}</p>
-
+        
         </div>)
         )}
       </div>
